@@ -59,6 +59,33 @@
         android:layout_height="wrap_content"
         android:entries="@array/kamar" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fasilitas" />
+
+    <CheckBox
+        android:id="@+id/checkBoxInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Internet" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCuci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Cuci" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Makan" />
+
     <Button
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
@@ -70,7 +97,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
         android:padding="16dp"
         android:text="Hasil" />
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etAsal;
     EditText etTelp;
     Spinner spUkuran;
+    CheckBox cbInternet, cbCuci, cbMakan;
     Button bOk;
     TextView tvHasil;
 
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         etAsal = (EditText) findViewById(R.id.editTextAsal);
         etTelp = (EditText) findViewById(R.id.editTextTelp);
         spUkuran = (Spinner) findViewById(R.id.spinnerUkuran);
+        cbInternet = (CheckBox) findViewById(R.id.checkBoxInternet);
+        cbCuci = (CheckBox) findViewById(R.id.checkBoxCuci);
+        cbMakan = (CheckBox) findViewById(R.id.checkBoxMakan);
         bOk = (Button) findViewById(R.id.buttonOk);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
 
@@ -49,11 +54,14 @@ public class MainActivity extends AppCompatActivity {
             String telp = etTelp.getText().toString();
             String ukuran = spUkuran.getSelectedItem().toString();
             String fasilitas = ", dengan fasilitas ";
+            if (cbInternet.isChecked()) fasilitas += cbInternet.getText() + ", ";
+            if (cbCuci.isChecked()) fasilitas += cbCuci.getText() + ", ";
+            if (cbMakan.isChecked()) fasilitas += cbMakan.getText() + ". ";
 
 
             tvHasil.setText(" Nama\t:\t" + nama + "\n Asal\t\t:\t"
                     + asal + "\n No. Telp.\t:\t" + telp
-                    + "\n\n Memesan kamar ukuran " + ukuran);
+                    + "\n\n Memesan kamar ukuran " + ukuran + fasilitas);
         }
 
     }

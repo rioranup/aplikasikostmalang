@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etNama;
     EditText etAsal;
     EditText etTelp;
+    Spinner spUkuran;
     Button bOk;
     TextView tvHasil;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         etNama = (EditText) findViewById(R.id.editTextNama);
         etAsal = (EditText) findViewById(R.id.editTextAsal);
         etTelp = (EditText) findViewById(R.id.editTextTelp);
+        spUkuran = (Spinner) findViewById(R.id.spinnerUkuran);
         bOk = (Button) findViewById(R.id.buttonOk);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
 
@@ -44,9 +47,13 @@ public class MainActivity extends AppCompatActivity {
             String nama = etNama.getText().toString();
             String asal = etAsal.getText().toString();
             String telp = etTelp.getText().toString();
+            String ukuran = spUkuran.getSelectedItem().toString();
+            String fasilitas = ", dengan fasilitas ";
+
 
             tvHasil.setText(" Nama\t:\t" + nama + "\n Asal\t\t:\t"
-                    + asal + "\n No. Telp.\t:\t" + telp);
+                    + asal + "\n No. Telp.\t:\t" + telp
+                    + "\n\n Memesan kamar ukuran " + ukuran);
         }
 
     }
